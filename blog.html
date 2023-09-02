@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            text-align: justify;
+        }
+
+        .text-bold {
+            font-weight: 600;
+        }
+        .title-style {
+            background-color: white; color: #FF1F3D; padding: 5px 8px 5px 8px; border-radius: 8px;
+        }
+        .btn-style {
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px 10px 20px;
+            margin: 15px 15px 15px 0px;
+            /* background-color: #25252533; */
+            background-color: navy;
+            /* color: black; */
+            color: white;
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .btn-style:hover {
+            color: white; 
+            background-color: tomato;
+        }
+        header {
+            text-align: end;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="anchor-style">
+            <button class="btn-style">Go Back</button>
+        </a>
+    </header>
+    <main>
+        <section style="border: 2px solid #FF1F3D; margin-bottom: 20px; border-radius: 12px;">
+            <h1 class="text-4xl" style="background-color:#FF1F3D; color: white; padding: 20px 10px 20px 10px; margin-top: 0px; line-height: 50px;">Scope of
+                <span class="title-style">var</span> , <span class="title-style">let</span> , and <span class="title-style">const</span> :</h1>
+            <div style="padding: 5px 20px 10px 20px;">
+                <p>In JavaScript, the scope of variables declared with <span class="text-bold">var</span>, <span
+                        class="text-bold">let</span>, and <span class="text-bold">const</span> differs. Understanding
+                    the
+                    scope of these variable declarations is crucial for writing maintainable and bug-free code.
+                </p>
+                <ol>
+                    <li>
+                        Scope of <span class="text-bold">`var`</span>:
+                        <ul>
+                            <li>`var` declarations have function scope, meaning they are scoped to the nearest
+                                containing
+                                function or global scope if declared outside of any function.</li>
+                            <li>They are not block-scoped, which means they can "leak" out of block statements (e.g.,
+                                loops
+                                and conditional statements).</li>
+                            <li>Hoisting: `var` declarations are hoisted to the top of their containing function or
+                                global
+                                scope. This means you can use a `var` variable before it's declared, but it will have an
+                                initial value of `undefined`.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Scope of <span class="text-bold">`let`</span>:
+                        <ul>
+                            <li>`let` declarations have block scope, which means they are scoped to the nearest
+                                enclosing
+                                block (e.g., loops, conditional statements, or functions).</li>
+                            <li>They are not hoisted in the same way as `var`. Variables declared with `let` are only
+                                accessible after their declaration within the block they are declared.</li>
+                            <li></li>
+                        </ul>
+                    </li>
+                    <li>
+                        Scope of <span class="text-bold">`const`</span>:
+                        <ul>
+                            <li>`const` declarations also have block scope, similar to `let`.</li>
+                            <li>Like `let`, they are not hoisted and are only accessible after their declaration within
+                                the
+                                block.</li>
+                            <li>However, `const` variables cannot be reassigned once they are assigned a value. Their
+                                value
+                                is constant.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In modern JavaScript, it's generally recommended to use `let` and `const` over `var` because they
+                    provide
+                    more predictable scoping behavior. Use `let` for variables that may need to be reassigned, and use
+                    `const` for variables that should not be reassigned (constants). This helps prevent unintentional
+                    variable modifications and makes your code more maintainable.</p>
+            </div>
+        </section>
+
+        <section style="border: 2px solid #FF1F3D; margin-bottom: 20px; border-radius: 12px;">
+            <h1 class="text-4xl" style="background-color:#FF1F3D; color: white; padding: 20px 10px 20px 10px; margin-top: 0px; line-height: 50px;">Use cases of <span class="title-style">null</span> and <span class="title-style">undefined</span> :</h1>
+            <div style="padding: 5px 20px 10px 20px;">
+                <p>In JavaScript, both <span class="text-bold">null</span> and <span class="text-bold">undefined</span> are used to represent the absence of a meaningful value, but they have slightly different use cases and semantics.
+                </p>
+                <ol>
+                    <li>
+                        <span class="text-bold">undefined:</span>
+                        <ul>
+                            <li><span class="text-bold">Variable Initialization:</span> When you declare a variable but do not assign a value to it, it is automatically assigned the value undefined. This is typically the initial value of variables.</li>
+                            <li><span class="text-bold">Function Parameters:</span> If a function is called with fewer arguments than it expects, the missing parameters are set to undefined.</li>
+                            <li><span class="text-bold">Object Properties:</span> When you try to access an object property that does not exist, JavaScript returns undefined.</li>
+                            <li><span>Return Value:</span> If a function does not explicitly return a value, it returns undefined by default.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="text-bold">null:</span>
+                        <ul>
+                            <li><span class="text-bold">Intentional Absence of Value:</span> null is often used to indicate that a variable or object property is intentionally empty or has no value. It's a way to explicitly state that something is devoid of value.</li>
+                            <li><span class="text-bold">Resetting Values:</span> You can use null to reset the value of a variable or object property to an empty state.</li>
+                            <li><span class="text-bold">Checking for Non-Existence:</span> In some cases, you may use null to check if a variable or property exists and has been explicitly set to null.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In summary, undefined typically represents the absence of a value due to an uninitialized variable or an absent property, whereas null is used to explicitly indicate that a variable or property has no value or has been reset. Both can be useful in different scenarios, but it's important to use them appropriately based on your intentions in your code.</p>
+            </div>
+        </section>
+
+        <section style="border: 2px solid #FF1F3D; margin-bottom: 50px; border-radius: 12px;">
+            <h1 class="text-4xl" style="background-color:#FF1F3D; color: white; padding: 20px 10px 20px 10px; margin-top: 0px; line-height: 50px;">What do I mean by <span class="title-style">REST API</span> :</h1>
+            <div style="padding: 5px 20px 10px 20px;">
+                <p><span class="text-bold">REST API</span> stands for "Representational State Transfer Application Programming Interface." It is an architectural style and a set of constraints for designing and interacting with web services. REST is not a specific technology or protocol; rather, it is a design pattern that defines how networked applications should communicate over the internet.</p>
+                <p style="margin-top: 5px;">Key principles and characteristics of <span class="text-bold">REST API</span>s include:</p>
+                <ol>
+                    <li><span class="text-bold">Stateless Communication:</span> In a REST API, each request from a client to a server must contain all the information necessary for the server to understand and process the request. The server should not rely on any previous requests or maintain session state between requests from the same client. This statelessness makes REST APIs scalable and easy to maintain.</li>
+                    <li><span class="text-bold">Resource-Based:</span> Resources are the fundamental concept in REST. Resources can represent any data entity, such as users, products, or articles. Each resource is identified by a unique URL, and clients interact with these resources using standard HTTP methods.</li>
+                    <li>
+                        <span class="text-bold">HTTP Methods:</span> RESTful APIs use HTTP methods to perform operations on resources. The most common HTTP methods used in REST APIs are:
+                        <ul>
+                            <li><span class="text-bold">`GET:`:</span> Retrieve data from the server.</li>
+                            <li><span class="text-bold">`POST`:</span> Create a new resource on the server.</li>
+                            <li><span class="text-bold">`PUT`:</span> Update an existing resource on the server or create it if it doesn't exist.</li>
+                            <li><span class="text-bold">`DELETE`:</span> Remove a resource from the server.</li>
+                            <li>Other HTTP methods like <span class="text-bold">`PATCH`</span>, <span class="text-bold">`HEAD`</span>, and <span class="text-bold">`OPTIONS`</span> can also be used for specific purposes.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="text-bold">Uniform Interface:</span> REST APIs have a uniform and consistent interface that simplifies communication between clients and servers. This uniformity includes using standard HTTP methods, adhering to resource naming conventions, and supporting content negotiation for different data formats (e.g., JSON, XML).
+                    </li>
+                    <li>
+                        <span class="text-bold">Representation:</span> Resources can have multiple representations, such as JSON, XML, or HTML. Clients can specify the desired representation through HTTP headers (e.g., Accept header), allowing for flexibility in how data is consumed.
+                    </li>
+                    <li>
+                        <span class="text-bold">Stateless Server:</span> The server does not store client state between requests. Each request from a client to the server should include all the information needed for the server to understand and fulfill the request. This enhances reliability, scalability, and simplicity.
+                    </li>
+                </ol>
+                <p><span class="text-bold">REST API</span>s are commonly used in web and mobile application development to enable communication between clients and servers over the internet. They provide a standardized and efficient way to access and manipulate resources, making it easier to build distributed systems that can evolve and scale.</p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
